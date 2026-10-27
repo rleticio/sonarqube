@@ -42,8 +42,8 @@ func TestVerificarPreco(t *testing.T) {
 }
 
 func TestCalcularDobroETriplo(t *testing.T) {
-    if calcularDobro(5) != 100 {
-        t.Error("calcularDobro(5) deveria retornar 100")
+    if calcularDobro(5) != 10 {
+        t.Error("calcularDobro(5) deveria retornar 10")
     }
 
     if calcularTriplo(5) != 15 {
