@@ -22,7 +22,7 @@ jobs:
           go-version: '1.26.5'
 
       - name: Executar testes e gerar cobertura
-        shell: pwsh
+        shell: powershell
         run: |
           go test -count=1 ./... -coverprofile=coverage.out
           if ($LASTEXITCODE -ne 0) {
@@ -30,7 +30,7 @@ jobs:
           }
 
       - name: Analisar com SonarScanner
-        shell: pwsh
+        shell: powershell
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: http://localhost:9000
