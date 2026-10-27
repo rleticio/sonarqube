@@ -34,10 +34,10 @@ jobs:
           type sonar-project.properties
           echo === Propriedade projectKey ===
           findstr /n /i "sonar.projectKey" sonar-project.properties
-
+          
       - name: Analisar com SonarScanner
         shell: cmd
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: http://localhost:9000
-        run: '"C:\Ferramentas\sonar-scanner\bin\sonar-scanner.bat" "-Dsonar.host.url=%SONAR_HOST_URL%" "-Dsonar.token=%SONAR_TOKEN%"'
+        run: '"C:\Ferramentas\sonar-scanner\bin\sonar-scanner.bat" "-Dsonar.projectKey=estudo-go" "-Dsonar.projectName=Estudo Go" "-Dsonar.host.url=%SONAR_HOST_URL%" "-Dsonar.token=%SONAR_TOKEN%"'
