@@ -25,6 +25,16 @@ jobs:
         shell: cmd
         run: go test -count=1 ./... -coverprofile=coverage.out
 
+      - name: Verificar configuração SonarQube
+        shell: cmd
+        run: |
+          echo === Diretorio de trabalho ===
+          cd
+          echo === Conteudo do arquivo ===
+          type sonar-project.properties
+          echo === Propriedade projectKey ===
+          findstr /n /i "sonar.projectKey" sonar-project.properties
+
       - name: Analisar com SonarScanner
         shell: cmd
         env:
